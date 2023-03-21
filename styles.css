@@ -1,0 +1,41 @@
+body {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form button {
+    width: 25%;
+}
+
+.booklist-hr {
+    width: 100%;
+}
+
+.book-list h3 {
+    color: red;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+.book-catalog {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 auto;
+}
+
+main {
+    width: fit-content;
+    margin: 0 auto;
+}
+
