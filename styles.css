@@ -1,15 +1,27 @@
 body {
     text-align: center;
+    background-image: url("./images/bg1.avif");
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+}
+
+form input {
+    border: 2px solid black;
+    height: 25px;
+}
+
+#form-div {
+    margin: auto 20%;
 }
 
 form button {
     width: 25%;
+    align-self:flex-end;
 }
 
 .booklist-hr {
@@ -21,10 +33,20 @@ form button {
     text-align: center;
 }
 
-ul {
+.book-list li {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 3px;
+    height: 30px;
+    padding: 50px auto;
+    align-items: center;
+}
+
+.book-list {
     list-style-type: none;
     margin-left: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .book-catalog {
@@ -32,10 +54,32 @@ ul {
     flex-direction: column;
     text-align: left;
     margin: 0 auto;
+    border: 2px solid black;
+    width: 25rem;
 }
 
 main {
     width: fit-content;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
+main hr {
+    margin: 6% auto;
+    width: 30%;
+    border-top: 2px solid black;
+}
+
+.grey-bg {
+    background-color: gainsboro;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+button {
+    border: 2px solid black;
+    box-shadow: 4px 5px grey;
+}

@@ -44,16 +44,19 @@ class Library {
                 let title = this.books[i].title;
                 let author = this.books[i].author;
                 let li = document.createElement('li');
-                li.innerHTML = `${title}<br>${author}`;
-                bookList.appendChild(li);
+                li.innerHTML = `${title} by ${author}`;
+                if(i%2==0){
+                    li.classList.add('grey-bg');
+                }
+                else {
+                    li.classList.add('white-bg');
+                }
                 let btn = document.createElement('button');
                 btn.classList.add('delete-btn');
                 btn.id = i;
                 btn.innerHTML = 'Remove';
-                bookList.appendChild(btn);
-                let hr = document.createElement('hr');
-                hr.classList.add('booklist-hr');
-                bookList.appendChild(hr);
+                li.appendChild(btn);
+                bookList.appendChild(li);
             }
           }
         else {
