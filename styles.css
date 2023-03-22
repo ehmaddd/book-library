@@ -37,9 +37,9 @@ nav li {
 nav a {
     text-decoration: none;
     color: black;
-    cursor: pointer;
     font-size: 1.2rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 #time-div {
@@ -58,16 +58,17 @@ form {
 
 form input {
     border: 2px solid black;
-    height: 25px;
+    height: 30px;
 }
 
 #form-div {
-    margin: auto 20%;
+    margin: auto 35%;
 }
 
 form button {
     width: 25%;
     align-self:flex-end;
+    cursor: pointer;
 }
 
 .book-list {
@@ -101,6 +102,10 @@ form button {
     height: fit-content;
 }
 
+.border-highlight {
+    border: 2px solid red;
+}
+
 main {
     width: 100%;
     margin: 5% auto;
@@ -114,6 +119,30 @@ main hr {
     border-top: 2px solid black;
 }
 
+#contact-info {
+    width: 100%;
+    margin: auto;
+}
+
+#contact-info ul {
+    text-align: left;
+    margin: 1.5rem 38% auto 38%;
+}
+
+#contact-info li {
+    margin-top: 0.7rem;
+}
+
+.contact-div {
+    height: 9rem;
+    margin-top: 1.25rem;
+}
+
+.contact-div p {
+    text-align: left;
+    margin: 2rem 35% auto 35%;
+}
+
 .grey-bg {
     background-color: gainsboro;
 }
@@ -125,14 +154,6 @@ main hr {
 button {
     border: 2px solid black;
     box-shadow: 4px 5px grey;
-}
-
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
 }
 
 .active-link {

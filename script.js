@@ -15,14 +15,31 @@ class Library {
     addBook (){
         title = document.querySelector('#title').value;
         author = document.querySelector('#author').value;
-    
-        const book = {
-            title: title,
-            author: author
+        
+        if(title=="" && author==""){
+            const titleBox = document.querySelector('#title');
+            const authorBox = document.querySelector('#author');
+            titleBox.classList.add('border-highlight');
+            authorBox.classList.add('border-highlight');
         }
-        if(this.books){
-            this.books.push(book);
+        else if(title==""){
+            const titleBox = document.querySelector('#title');
+            titleBox.classList.add('border-highlight');
         }
+        else if(author==""){
+            const authorBox = document.querySelector('#author');
+            authorBox.classList.add('border-highlight');
+        }
+        else {
+            const book = {
+                title: title,
+                author: author
+            }
+            if(this.books){
+                this.books.push(book);
+            }
+        }
+        
     }
     
     loadLocalStorage(){
@@ -75,18 +92,6 @@ class Library {
             this.displayData();
         }
     }
-
-    showTime(){
-        const timeDiv = document.getElementById('time-div');
-        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        var today = new Date();
-        var date = monthNames[(today.getMonth()+1)]+' '+today.getDate()+' '+today.getFullYear();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date+' <b>'+time+'</b>';
-     
-        timeDiv.innerHTML = dateTime;
-        setTimeout(this.showTime, 50);
-    }
 }
 
 const library = new Library();
@@ -114,11 +119,13 @@ form.addEventListener('submit', (event) => {
 });
 
 window.addEventListener('load', () => {
-    setTimeout(library.showTime, 50);
+    setTimeout(showTime, 50);
     nav[0].classList.add('active-link');
-    bookCatalog.classList.add('show');
     addBookForm.classList.add('hide');
     contactInfo.classList.add('hide');
+    bookCatalog.style.display = "block";
+    addBookForm.style.display = "none";
+    contactInfo.style.display = "none";
     library.loadLocalStorage();
     library.displayData();
 });
@@ -127,8 +134,44 @@ bookList.addEventListener('click', (ev) => {
     library.deleteItem(ev);
 });
 
+function showTime(){
+    const timeDiv = document.getElementById('time-div');
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var today = new Date();
+    var date = monthNames[(today.getMonth()+1)]+' '+today.getDate()+' '+today.getFullYear();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' <b>'+time+'</b>';
+ 
+    timeDiv.innerHTML = dateTime;
+    setTimeout(showTime, 50);
+}
+
 for(let a=0; a<nav.length; a++){
     nav[a].addEventListener('click', (ev)=> {
-        console.log(ev.target.classList);
+        var showClass = ev.target.classList;
+        if(ev.target.id=='showList'){
+            nav[0].classList.add('active-link');
+            nav[1].classList.remove('active-link');
+            nav[2].classList.remove('active-link');
+            bookCatalog.style.display = "block";
+            addBookForm.style.display = "none";
+            contactInfo.style.display = "none";
+        }
+        else if(ev.target.id=='showForm'){
+            nav[0].classList.remove('active-link');
+            nav[1].classList.add('active-link');
+            nav[2].classList.remove('active-link');
+            bookCatalog.style.display = "none"
+            addBookForm.style.display = "block";
+            contactInfo.style.display = "none";
+        }
+        else if(ev.target.id=='showContact'){
+            nav[0].classList.remove('active-link');
+            nav[1].classList.remove('active-link');
+            nav[2].classList.add('active-link');
+            bookCatalog.style.display = "none"
+            addBookForm.style.display = "none";
+            contactInfo.style.display = "block";
+        }
     });
 }
