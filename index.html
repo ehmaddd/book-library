@@ -8,21 +8,45 @@
     <title>Awesome Books</title>
 </head>
 <body>
+    <header>
+        <img src="./images/ab.png">
+        <nav>
+            <ul>
+                <li><a class="showList">List</a></li>
+                <li><a class="showForm">Add new</a></li>
+                <li><a class="showContact">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="time-div"></div>
+    </header>
+
     <main>
-        <h2>All awesome books</h2>
-        <div class="book-catalog">
-            <ul class="book-list"></ul>
+        <div id="book-list">
+            <h1>All awesome books</h1>
+            <div class="book-catalog">
+                <ul class="book-list"></ul>
+            </div>
         </div>
-        <hr>
-        <h2>Add a new book</h2>
-        <div id="form-div">
-            <form id="book-form">
-                <input type="text" id="title" placeholder="Title">
-                <input type="text" id="author" placeholder="Author">
-                <button id="submit">Add</button>
-            </form>
+        
+        <div id="add-book">
+            <h2>Add a new book</h2>
+            <div id="form-div">
+                <form id="book-form">
+                    <input type="text" id="title" placeholder="Title">
+                    <input type="text" id="author" placeholder="Author">
+                    <button id="submit">Add</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="contact-info">
+
         </div>
     </main>
+
+    <footer>
+        (c) 2021 - Awesome Books Inc - All rights reserved
+    </footer>
 
 <script src="./script.js"></script>
 </body>

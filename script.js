@@ -75,6 +75,18 @@ class Library {
             this.displayData();
         }
     }
+
+    showTime(){
+        const timeDiv = document.getElementById('time-div');
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var today = new Date();
+        var date = monthNames[(today.getMonth()+1)]+' '+today.getDate()+' '+today.getFullYear();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' <b>'+time+'</b>';
+     
+        timeDiv.innerHTML = dateTime;
+        setTimeout(this.showTime, 50);
+    }
 }
 
 const library = new Library();
@@ -82,7 +94,15 @@ const library = new Library();
 const form = document.querySelector('#book-form');
 const catalog = document.querySelector('.book-catalog');
 const h1 = document.querySelector('h1');
+
 const bookList = document.querySelector('.book-list');
+
+const bookCatalog = document.querySelector('#book-list');
+const addBookForm = document.querySelector('#add-book');
+const contactInfo = document.querySelector('#contact-info');
+
+const nav = document.querySelectorAll('nav a');
+
 let title, author;
 
 form.addEventListener('submit', (event) => {
@@ -94,6 +114,11 @@ form.addEventListener('submit', (event) => {
 });
 
 window.addEventListener('load', () => {
+    setTimeout(library.showTime, 50);
+    nav[0].classList.add('active-link');
+    bookCatalog.classList.add('show');
+    addBookForm.classList.add('hide');
+    contactInfo.classList.add('hide');
     library.loadLocalStorage();
     library.displayData();
 });
@@ -101,3 +126,9 @@ window.addEventListener('load', () => {
 bookList.addEventListener('click', (ev) => {
     library.deleteItem(ev);
 });
+
+for(let a=0; a<nav.length; a++){
+    nav[a].addEventListener('click', (ev)=> {
+        console.log(ev.target.classList);
+    });
+}

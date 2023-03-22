@@ -2,6 +2,52 @@ body {
     text-align: center;
     background-image: url("./images/bg1.avif");
     font-family: Arial, Helvetica, sans-serif;
+    min-height: 98vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+}
+
+header img {
+    width: 7%;
+    position: absolute;
+    left: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+nav ul {
+    list-style-type: none;
+    min-width: 20rem;
+    max-width: 25rem;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 7%;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#time-div {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 15%;
+    float: right;
+    clear: both;
+    overflow: hidden;
 }
 
 form {
@@ -24,8 +70,11 @@ form button {
     align-self:flex-end;
 }
 
-.booklist-hr {
-    width: 100%;
+.book-list {
+    list-style-type: none;
+    margin-left: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .book-list h3 {
@@ -36,17 +85,10 @@ form button {
 .book-list li {
     display: flex;
     justify-content: space-between;
-    margin: auto 3px;
-    height: 30px;
+    margin: auto 3%;
+    height: 40px;
     padding: 50px auto;
     align-items: center;
-}
-
-.book-list {
-    list-style-type: none;
-    margin-left: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 .book-catalog {
@@ -55,12 +97,13 @@ form button {
     text-align: left;
     margin: 0 auto;
     border: 2px solid black;
-    width: 25rem;
+    width: 90%;
+    height: fit-content;
 }
 
 main {
-    width: fit-content;
-    margin: 0 auto;
+    width: 100%;
+    margin: 5% auto;
     display: flex;
     flex-direction: column;
 }
@@ -82,4 +125,24 @@ main hr {
 button {
     border: 2px solid black;
     box-shadow: 4px 5px grey;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.active-link {
+    color: blue;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    height: 2rem;
+    padding-top: 1.5%;
+    margin-top: auto;
 }
